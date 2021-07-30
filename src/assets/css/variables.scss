@@ -1,0 +1,37 @@
+$roboto: Roboto, sans-serif;
+$green-code: #6bbd44;
+$gray-code: #707070;
+$input-invalid-red-code: #db6c6c;
+$lock-red-code: #e01f21;
+
+$sizes: 0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 12, 14, 15, 16, 18, 20, 24, 25, 30, 40, 50, 55;
+$black-color: #000;
+$white-color: #fff;
+$gray-color: (
+    '100': #34383d,
+    '200': #1c1e21
+);
+$green-color: (
+    '100': #6bbd44,
+);
+$blue-color: (
+    '100': #3ea3ed,
+);
+$yellow-color: (
+    '100': #f8b600,
+);
+$red-color: (
+    '100': #e01f21,
+);
+
+$purple-color: (
+    '100': #7935e0,
+);
+
+$color: (
+    'gray': $gray-color,
+    'green': $green-color,
+    'blue': $blue-color,
+    'yellow': $yellow-color,
+    'red': $red-color,
+);

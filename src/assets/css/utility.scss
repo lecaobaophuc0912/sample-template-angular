@@ -1,0 +1,723 @@
+@import './variables.scss';
+::ng-deep {
+  .bg-pink {
+    background: #fbeaea;
+  }
+
+  .bg-light-blue {
+    background-color: #eaf3fb;
+  }
+
+  .bg-white {
+    background-color: white;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .flex-row {
+    flex-direction: row;
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .flex-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  .flex-column-reverse {
+    flex-direction: column-reverse;
+  }
+
+  .justify-start {
+    justify-content: flex-start;
+  }
+
+  .justify-end {
+    justify-content: flex-end;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .justify-between {
+    justify-content: space-between;
+  }
+
+  .justify-around {
+    justify-content: space-around;
+  }
+
+  .content-center {
+    align-content: center;
+  }
+
+  .content-start {
+    align-content: flex-start;
+  }
+
+  .content-end {
+    align-content: flex-end;
+  }
+
+  .content-between {
+    align-content: space-between;
+  }
+
+  .content-around {
+    align-content: space-around;
+  }
+
+  .items-start {
+    align-items: flex-start;
+  }
+
+  .items-end {
+    align-items: flex-end;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .items-baseline {
+    align-items: baseline;
+  }
+
+  .items-stretch {
+    align-items: stretch;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
+  }
+
+  .lowercase {
+    text-transform: lowercase;
+  }
+
+  .capitalize {
+    text-transform: capitalize;
+  }
+
+  .normal-case {
+    text-transform: none;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .flex-1 {
+    flex: 1 1 0%;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .h-full {
+    height: 100%;
+  }
+
+  .absolute {
+    position: absolute;
+  }
+
+  .relative {
+    position: relative;
+  }
+
+  .top-0 {
+    top: 0 !important;
+  }
+
+  .right-0 {
+    right: 0 !important;
+  }
+
+  .bottom-0 {
+    bottom: 0 !important;
+  }
+
+  .left-0 {
+    left: 0 !important;
+  }
+
+  .padding-0 {
+    padding: 0 !important;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  .text-overflow-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .position-relative {
+    position: relative;
+  }
+
+  .position-absolute {
+    position: absolute;
+  }
+
+  .text-bold {
+    font-weight: bold;
+  }
+
+  .text-gray-200 {
+    color: #888888;
+  }
+
+  .text-gray-300 {
+    color: #444444;
+  }
+
+  .text-gray-400 {
+    color: #333333;
+  }
+
+  .text-green-100 {
+    color: #6bbd44;
+  }
+
+  .text-black {
+    color: #000000;
+  }
+
+  .text-blue {
+    color: #2f84c6;
+  }
+
+  .text-red {
+    color: #c73535;
+  }
+
+  .text-red-100 {
+    color: #d85050;
+  }
+
+  .text-yellow {
+    color: #eab44e;
+  }
+
+  .text-decoration {
+    text-decoration: underline;
+  }
+
+  .font-weight-bold {
+    font-weight: bold !important;
+  }
+
+  .font-weight-normal {
+    font-weight: normal;
+  }
+
+  .font-weight-200 {
+    font-weight: 200 !important;
+  }
+
+  .font-weight-300 {
+    font-weight: 300 !important;
+  }
+
+  .font-weight-600 {
+    font-weight: 600 !important;
+  }
+
+  .font-weight-700 {
+    font-weight: 700 !important;
+  }
+
+  .font-weight-800 {
+    font-weight: 800 !important;
+  }
+
+  .font-weight-regular {
+    font-weight: 400 !important;
+  }
+
+  .border-radius-10 {
+    border-radius: 10px;
+  }
+
+  .next-btn,
+  .back-btn {
+    width: 100%;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    background-image: none;
+    border: none;
+    outline: none;
+  }
+
+  .next-btn[disabled],
+  .back-btn[disabled] {
+    opacity: 0.4;
+  }
+
+  .back-btn {
+    border: 1px solid #bcd2e3;
+    color: #444444;
+    background-color: white;
+  }
+
+  .back-btn.btn-sm {
+    height: 40px !important;
+    line-height: 40px !important;
+    border-radius: 20px;
+    padding: 0 30px !important;
+    width: auto;
+  }
+
+  .overflow-auto {
+    overflow: auto !important;
+  }
+
+  .overflow-hidden {
+    overflow: hidden !important;
+  }
+
+  .color-white {
+    color: $white-color;
+  }
+
+  .color-white-imp {
+    color: $white-color !important;
+  }
+
+  .bg-white {
+    background-color: $white-color;
+  }
+
+  .bg-white-imp {
+    background-color: $white-color !important;
+  }
+
+  .color-black {
+    color: $black-color;
+  }
+
+  .color-black-imp {
+    color: $black-color !important;
+  }
+
+  .bg-black {
+    background-color: $black-color;
+  }
+
+  .bg-black-imp {
+    background-color: $black-color !important;
+  }
+
+  .line-height-0 {
+    line-height: 0px;
+  }
+
+  .height-0 {
+    height: 0px !important;
+  }
+
+  @each $name, $item in $color {
+    @each $color-code, $val in $item {
+      .color-#{$name}-#{$color-code} {
+        color: #{$val};
+      }
+
+      .color-#{$name}-#{$color-code}-imp {
+        color: #{$val} !important;
+      }
+
+      .bg-#{$name}-#{$color-code} {
+        background-color: #{$val};
+      }
+
+      .bg-#{$name}-#{$color-code}-imp {
+        background-color: #{$val} !important;
+      }
+    }
+  }
+
+  @each $size in $sizes {
+    .m-#{$size} {
+      margin: #{$size}px;
+    }
+
+    .mt-#{$size} {
+      margin-top: #{$size}px;
+    }
+
+    .mr-#{$size} {
+      margin-right: #{$size}px;
+    }
+
+    .mb-#{$size} {
+      margin-bottom: #{$size}px;
+    }
+
+    .ml-#{$size} {
+      margin-left: #{$size}px;
+    }
+
+    .p-#{$size} {
+      padding: #{$size}px;
+    }
+
+    .pt-#{$size} {
+      padding-top: #{$size}px;
+    }
+
+    .pr-#{$size} {
+      padding-right: #{$size}px;
+    }
+
+    .pb-#{$size} {
+      padding-bottom: #{$size}px;
+    }
+
+    .pl-#{$size} {
+      padding-left: #{$size}px;
+    }
+    @if $size > 0 {
+      .font-#{$size} {
+        font-size: #{$size}px;
+      }
+    }
+  }
+
+  .z--1 {
+    z-index: -1;
+  }
+
+  .z-0 {
+    z-index: 0;
+  }
+
+  .z-1 {
+    z-index: 1;
+  }
+
+  .z-2 {
+    z-index: 2;
+  }
+
+  .z-100 {
+    z-index: 100;
+  }
+
+  .z-1000 {
+    z-index: 1000;
+  }
+
+  .z-10000 {
+    z-index: 10000;
+  }
+
+  .round {
+    border-radius: 50%;
+  }
+
+  .round-5 {
+    border-radius: 5px;
+  }
+
+  .round-8 {
+    border-radius: 8px;
+  }
+
+  .round-8 {
+    border-radius: 8px;
+  }
+
+  .btn-green,
+  .btn-blue,
+  .btn-yellow,
+  .btn-white,
+  .btn-outline-yellow,
+  .btn-outline-blue,
+  .btn-outline-green,
+  .btn-outline-white,
+  .btn-outline-gray,
+  .btn-outline-purple,
+  .btn-outline-red,
+  .btn-outline-none {
+    height: 36px !important;
+    line-height: 36px !important;
+    border-radius: 18px;
+    font-size: 12px !important;
+    padding: 0px 16px !important;
+    background: white;
+    border: none;
+    outline: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+  }
+
+  .btn-green {
+    background: map-get($green-color, '400');
+    color: white;
+  }
+
+  .btn-blue {
+    background: map-get($blue-color, '700');
+    color: white;
+  }
+
+  .btn-yellow {
+    background: map-get($yellow-color, '300');
+    color: white;
+  }
+
+  .btn-white {
+    background: white;
+    color: map-get($blue-color, '700');
+  }
+
+  .btn-outline-yellow {
+    color: map-get($yellow-color, '300');
+    border: 1px solid map-get($yellow-color, '300');
+    background: transparent;
+  }
+
+  .btn-outline-blue {
+    color: map-get($blue-color, '700');
+    border: 1px solid map-get($blue-color, '700');
+    background: transparent;
+  }
+
+  .btn-outline-green {
+    color: map-get($green-color, '400');
+    border: 1px solid map-get($green-color, '400');
+    background: transparent;
+  }
+
+  .btn-outline-white {
+    color: white;
+    border: 1px solid white;
+    background: transparent;
+  }
+  .btn-outline-gray {
+    color: map-get($gray-color, '1400');
+    border: 1px solid map-get($gray-color, '1400');
+    background: transparent;
+  }
+
+  .btn-outline-gray {
+    color: map-get($gray-color, '1400');
+    border: 1px solid map-get($gray-color, '1400');
+    background: transparent;
+  }
+
+  .btn-outline-purple {
+    color: map-get($purple-color, '100');
+    border: 1px solid map-get($purple-color, '100');
+    background: transparent;
+  }
+
+  .btn-outline-red {
+    color: map-get($red-color, '100');
+    border: 1px solid map-get($red-color, '100');
+    background: transparent;
+  }
+
+  .btn-outline-none {
+    color: map-get($blue-color, '700');
+    border: 1px solid transparent;
+    background: transparent;
+  }
+
+  .btn-disabled {
+    opacity: 0.5;
+  }
+
+  .card {
+    padding: 16px;
+    box-shadow: 0px 1px 15px map-get($gray-color, '100');
+    border-radius: 8px;
+    background: white;
+  }
+
+  .card.border-blue {
+    border: 1px solid map-get($blue-color, '900');
+  }
+
+  .card.border-yellow {
+    border: 1px solid map-get($yellow-color, '300');
+  }
+
+  .card.border-green {
+    border: 1px solid map-get($green-color, '400');
+    border-top-width: 10px;
+  }
+
+  .card.border-top-green {
+    border-top: 10px solid map-get($green-color, '400');
+  }
+
+  .card.bg-blue {
+    background: transparent linear-gradient(148deg, map-get($blue-color, '500') 0%, map-get($blue-color, '700') 100%) 0%
+      0% no-repeat padding-box;
+  }
+
+  .card.bg-blue-100 {
+    background: transparent linear-gradient(148deg, white 0%, map-get($blue-color, '100') 100%) 0% 0% no-repeat
+      padding-box;
+  }
+
+  .card.bg-yellow {
+    background: transparent
+      linear-gradient(315deg, map-get($yellow-color, '200') 0%, map-get($yellow-color, '100') 100%) 0% 0% no-repeat
+      padding-box;
+  }
+
+  .card > .card-title {
+    margin: -16px -16px 0px -16px;
+    padding: 16px 16px 8px 16px;
+    background: map-get($blue-color, '100');
+    border-bottom: 3px solid map-get($blue-color, '900');
+    color: map-get($blue-color, '800');
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .card > .card-title-normal {
+    margin: -16px -16px 0px -16px;
+    padding: 16px 16px 8px 16px;
+    color: map-get($gray-color, '1200');
+    border-bottom: 1px solid map-get($blue-color, '300');
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .card > .card-icon {
+    margin: -16px -16px 0px -16px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    border-radius: 5px 5px 0px 0px;
+  }
+
+  .card > .card-icon > span {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: white;
+    margin-top: 8px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card > .card-icon-blue {
+    background: map-get($blue-color, '900');
+  }
+
+  .card > .card-icon-blue > span {
+    border: 2px solid map-get($blue-color, '900');
+    color: map-get($blue-color, '900');
+  }
+
+  .card > .card-icon-yellow {
+    background: map-get($yellow-color, '300');
+  }
+
+  .card > .card-icon-yellow > span {
+    border: 2px solid map-get($yellow-color, '300');
+    color: map-get($yellow-color, '300');
+  }
+
+  .text-center {
+    text-align: center !important;
+  }
+
+  .outline-none {
+    outline: none !important;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .flex-xs {
+      display: flex;
+    }
+
+    .flex-column-reverse-xs {
+      flex-direction: column-reverse;
+    }
+
+    .justify-center-xs {
+      justify-content: center;
+    }
+
+    .text-center-xs {
+      text-align: center;
+    }
+
+    .block-xs {
+      display: block;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .flex-sm {
+      display: flex;
+    }
+
+    .flex-column-reverse-sm {
+      flex-direction: column-reverse;
+    }
+
+    .btn-sm {
+      font-size: 18px !important;
+    }
+
+    .btn-sm {
+      font-size: 18px !important;
+    }
+
+    .text-center-sm {
+      text-align: center;
+    }
+
+    .block-sm {
+      display: block;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .block-md {
+      display: block;
+    }
+
+    .flex-md {
+      display: flex;
+    }
+
+    .text-left-md {
+      text-align: left;
+    }
+  }
+}
