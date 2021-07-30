@@ -15,7 +15,6 @@ const components = [
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        RouterModule,
     ],
     declarations: [
         ...components

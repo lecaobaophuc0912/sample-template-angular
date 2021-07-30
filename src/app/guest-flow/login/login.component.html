@@ -1,21 +1,22 @@
 <div class="container-fluid d-flex flex-column justify-content-center align-item-center bg-gray-100 login-container">
   <div class="row">
     <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-3 bg-gray-200 login-form flex items-center">
-      <form class="col-12 ml-10">
+      <form class="col-12 ml-10" [formGroup]="loginForm" novalidate (ngSubmit)="onLoginClick()">
         <div class="flex-col justify-center items-center">
           <div>
-            <input autocomplete="off" type="email" class="form-control input-no-border px-0 py-4" id="floatingInput"
-              placeholder="Username">
+            <input autocomplete="off" type="email" formControlName="username"
+              class="form-control input-no-border px-0 py-4" id="username" placeholder="Username">
           </div>
           <div class="seperator-line"></div>
           <div>
-            <input autocomplete="off" type="password" class="form-control input-no-border px-0 py-4"
-              id="floatingPassword" placeholder="Password">
+            <input autocomplete="off" type="password" formControlName="password"
+              class="form-control input-no-border px-0 py-4" id="password" placeholder="Password">
           </div>
         </div>
       </form>
       <div class="col-2 btn-login round flex justify-center items-center bg-gray-100">
-        <div class="btn-login-icon-layout round bg-gray-200 flex justify-center items-center cursor-pointer">
+        <div class="btn-login-icon-layout round bg-gray-200 flex justify-center items-center cursor-pointer"
+          (click)="onLoginClick()">
           <i class="fas fa-chevron-right font-30 color-gray-300 p-4"></i>
         </div>
       </div>
