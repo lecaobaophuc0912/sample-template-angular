@@ -1,7 +1,29 @@
 <div class="container-fluid d-flex flex-column justify-content-center align-item-center bg-gray-100 login-container">
   <div class="row">
-    <div class="col-md-10 mx-auto col-lg-5">
-      asada
+    <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-3 bg-gray-200 login-form flex items-center">
+      <form class="col-12 ml-10">
+        <div class="flex-col justify-center items-center">
+          <div>
+            <input autocomplete="off" type="email" class="form-control input-no-border px-0 py-4" id="floatingInput"
+              placeholder="Username">
+          </div>
+          <div class="seperator-line"></div>
+          <div>
+            <input autocomplete="off" type="password" class="form-control input-no-border px-0 py-4"
+              id="floatingPassword" placeholder="Password">
+          </div>
+        </div>
+      </form>
+      <div class="col-2 btn-login round flex justify-center items-center bg-gray-100">
+        <div class="btn-login-icon-layout round bg-gray-200 flex justify-center items-center cursor-pointer">
+          <i class="fas fa-chevron-right font-30 color-gray-300 p-4"></i>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-3 flex flex-col justify-center items-center mt-12">
+      <span class="cursor-pointer font-weight-600 color-gray-400">Don't have account? <span class="text-underline">Sign
+          Up</span></span>
+      <span class="cursor-pointer font-weight-600 color-gray-400 text-underline mt-12">Forgot password</span>
     </div>
   </div>
 </div>

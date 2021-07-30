@@ -100,6 +100,7 @@
     align-items: stretch;
   }
 
+
   .uppercase {
     text-transform: uppercase;
   }
@@ -218,7 +219,7 @@
     color: #eab44e;
   }
 
-  .text-decoration {
+  .text-underline {
     text-decoration: underline;
   }
 
@@ -396,6 +397,17 @@
     .pl-#{$size} {
       padding-left: #{$size}px;
     }
+
+    .px-#{size} {
+      padding-left: #{$size}px;
+      padding-right: #{$size}px;
+    }
+
+    .py-#{size} {
+      padding-top: #{$size}px;
+      padding-bottom: #{$size}px;
+    }
+
     @if $size > 0 {
       .font-#{$size} {
         font-size: #{$size}px;
@@ -719,5 +731,31 @@
     .text-left-md {
       text-align: left;
     }
+  }
+
+  .input-no-border {
+    border: none;
+    background-color: transparent !important;
+    caret-color: map-get($gray-color, '400');
+    color: map-get($gray-color, '400') !important;
+    outline-style: none !important;
+    box-shadow: none !important;
+    border-color: transparent !important;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active
+  {
+    // -webkit-box-shadow: 0 0 0 30px  map-get($gray-color, '200') inset !important;
+    -webkit-text-fill-color: map-get($gray-color, '400');
+    transition: background-color 5000s ease-in-out 0s;
+  }
+  
+  .seperator-line {
+    height: 2px;
+    width: 100%;
+    background-color: map-get($gray-color, '300');;
   }
 }

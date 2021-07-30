@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import './utility.scss';
+@import './fontawesome.scss';
+@import './variables.scss';
+
+
+::ng-deep {
+    body {
+        height: 100%;
+    }
+    
+    .fa {
+        font-family: FontAwesome !important;
+    }
+}
