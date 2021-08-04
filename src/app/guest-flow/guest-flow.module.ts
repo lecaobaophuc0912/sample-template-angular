@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { GuestFlowComponent } from './guest-flow.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 const routes: Routes = [
   {
     path: 'login',
-    component: GuestFlowComponent,
-    loadChildren: () =>
-      import('../guest-flow/login/login.module').then(
-        (m) => m.LoginModule
-      ),
+    component: LoginComponent,
+  },
+  {
+    path: 'sign-up',
+    component: SignUpComponent,
   }
 ]
 
@@ -22,6 +24,6 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [GuestFlowComponent]
+  declarations: [GuestFlowComponent, LoginComponent, SignUpComponent]
 })
 export class GuestFlowModule { }
