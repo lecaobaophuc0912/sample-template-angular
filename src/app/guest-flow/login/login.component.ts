@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../../shared/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private userService: UserService,
   ) {
 
   }
@@ -32,6 +34,12 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginClick() {
+    this.userService.getUserDetail(121312312).subscribe(() => {
+      debugger;
+
+    }, error => {
+      debugger;
+    })
     if (this.loginForm.invalid) {
       return;
     }

@@ -114,16 +114,16 @@ describe('LoginComponent', () => {
   it('should be call onLoginClick with form invalid', waitForAsync(() => {
     // Set value for invalid form
     component.loginForm.setValue(invalidValues)
-    expect(component.onLoginClick()).toBeUndefined();
+    component.onLoginClick();
     expect(routerSpy.navigate).not.toHaveBeenCalled();
   }));
 
   it('should be call onLoginClick with form valid', waitForAsync(() => {
     // Set value for valid form
     component.loginForm.setValue(validValues);
+    component.onLoginClick();
     routerSpy.navigate(['home']);
     expect(routerSpy.navigate).toHaveBeenCalledOnceWith(['home']);
-    expect(component.onLoginClick()).toBeUndefined();
   }));
 
 });
