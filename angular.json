@@ -91,6 +91,10 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "codeCoverage": true,
+            "codeCoverageExclude": [
+              "src/test.ts",
+              "src/app/shared/mock-unit-test/**"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
