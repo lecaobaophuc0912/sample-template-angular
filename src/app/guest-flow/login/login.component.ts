@@ -15,10 +15,11 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
   ) {
-    this.createForm();
+
   }
 
   ngOnInit() {
+    this.createForm();
   }
 
   createForm() {
@@ -27,15 +28,13 @@ export class LoginComponent implements OnInit {
         username: new FormControl('', [Validators.required]),
         password: new FormControl('', [Validators.required]),
       }
-    )
+    );
   }
 
   onLoginClick() {
     if (this.loginForm.invalid) {
-      console.log('invalid');
       return;
     }
     this.router.navigate(['home'])
-    console.log('onLoginClick');
   }
 }
