@@ -16,6 +16,7 @@ const components = [
     imports: [
         CommonModule,
         FormsModule,
+        RouterModule,
         ReactiveFormsModule,
         HttpClientModule
     ],

@@ -2,12 +2,15 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { HomeComponent } from '../../dashboard/home/home.component';
 import { Location } from '@angular/common';
-
+import { UserService } from '../../shared/services/user.service';
+import { mockDataLoginTokenData, MockUserServices } from '../../shared/mock-unit-test/services/mock-user-services.spec';
+import { LoginReponse } from '../../shared/models/user';
+import { of, throwError } from 'rxjs';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;
@@ -26,6 +29,7 @@ describe('LoginComponent', () => {
     username: '',
     password: ''
   };
+  let fakeUserService: UserService;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -38,6 +42,7 @@ describe('LoginComponent', () => {
       ],
       providers: [
         FormBuilder,
+        { provide: UserService, useClass: MockUserServices }
       ]
     })
       .compileComponents();
@@ -48,11 +53,11 @@ describe('LoginComponent', () => {
     fixture = TestBed.createComponent(LoginComponent);
     nativeEle = fixture.debugElement.nativeElement;
     component = fixture.componentInstance;
-    formBuilder = TestBed.inject(FormBuilder);
     routerSpy = {
       navigate: jasmine.createSpy('navigate'),
     };
     spyLocation = TestBed.inject(Location);
+    fakeUserService = TestBed.inject(UserService);
     fixture.detectChanges();
   }));
 
@@ -118,12 +123,58 @@ describe('LoginComponent', () => {
     expect(routerSpy.navigate).not.toHaveBeenCalled();
   }));
 
-  it('should be call onLoginClick with form valid', waitForAsync(() => {
+  it('should be call onLoginClick with form valid and login successs', waitForAsync(() => {
+    // spyOn login function
+    spyOn(fakeUserService, 'login').and.callThrough();
     // Set value for valid form
     component.loginForm.setValue(validValues);
     component.onLoginClick();
     routerSpy.navigate(['home']);
     expect(routerSpy.navigate).toHaveBeenCalledOnceWith(['home']);
+    expect(fakeUserService.login).toHaveBeenCalledOnceWith(validValues.username, validValues.password);
+
+    // Check data reponse with fake service
+    let loginReponse: LoginReponse;
+    fakeUserService.login(validValues.username, validValues.password).subscribe((res) => {
+      loginReponse = res;
+    });
+    expect(loginReponse.token).toEqual(mockDataLoginTokenData.token);
+  }));
+
+  it('should be call onLoginClick with form valid and login successs but dont have token', waitForAsync(() => {
+    // spyOn login function to return value is null token
+    spyOn(fakeUserService, 'login').and.returnValue(of({ token: null }));
+    // Set value for valid form
+    component.loginForm.setValue(validValues);
+    component.onLoginClick();
+    expect(fakeUserService.login).toHaveBeenCalledOnceWith(validValues.username, validValues.password);
+    expect(routerSpy.navigate).not.toHaveBeenCalled();
+
+    // Check data reponse with fake service
+    let loginReponse: LoginReponse;
+    fakeUserService.login(validValues.username, validValues.password).subscribe((res) => {
+      loginReponse = res
+    });
+    expect(loginReponse.token).toBeNull();
+  }));
+
+  it('should be call onLoginClick with form valid and login error', waitForAsync(() => {
+    // spyOn login function to return value is null token
+    spyOn(fakeUserService, 'login').and.returnValue(throwError('API Error'));
+    // Set value for valid form
+    component.loginForm.setValue(validValues);
+    component.onLoginClick();
+    expect(fakeUserService.login).toHaveBeenCalledOnceWith(validValues.username, validValues.password);
+    expect(routerSpy.navigate).not.toHaveBeenCalled();
+
+    // Check data reponse with fake service
+    let loginError: string;
+    fakeUserService.login(validValues.username, validValues.password).subscribe((res) => {
+      fail('Success callback must be not call')
+    }, (error) => {
+      loginError = error
+    });
+    expect(loginError).toEqual('API Error');
   }));
 
 });

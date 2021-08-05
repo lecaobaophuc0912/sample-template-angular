@@ -3,7 +3,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 /* tslint:disable:no-unused-variable */
 
 import { TestBed, waitForAsync, inject } from '@angular/core/testing';
-import { mockDataGetUserDetailData, mockDataLoginTokenData } from '../mock-unit-test/services/mock-user-services';
+import { mockDataGetUserDetailData, mockDataLoginTokenData } from '../mock-unit-test/services/mock-user-services.spec';
 import { LoginReponse, UserDetailReponse } from '../models/user';
 import { UserService } from './user.service';
 const domainUrl: string = 'https://reqres.in/api';

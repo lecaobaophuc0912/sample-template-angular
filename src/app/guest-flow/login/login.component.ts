@@ -11,7 +11,7 @@ import { UserService } from '../../shared/services/user.service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
-
+  errorLogin: boolean = false;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   }
 
+
   ngOnInit() {
     this.createForm();
   }
@@ -27,22 +28,28 @@ export class LoginComponent implements OnInit {
   createForm() {
     this.loginForm = this.fb.group(
       {
-        username: new FormControl('', [Validators.required]),
-        password: new FormControl('', [Validators.required]),
+        username: new FormControl('eve.holt@reqres.in', [Validators.required]),
+        password: new FormControl('cityslicka', [Validators.required]),
       }
     );
   }
 
   onLoginClick() {
-    this.userService.getUserDetail(121312312).subscribe(() => {
-      debugger;
-
-    }, error => {
-      debugger;
-    })
     if (this.loginForm.invalid) {
       return;
     }
-    this.router.navigate(['home'])
+    const username = this.loginForm.value.username;
+    const password = this.loginForm.value.password;
+    this.userService.login(username, password).subscribe((res) => {
+      if (res && res.token) {
+        this.router.navigate(['home']);
+        localStorage.setItem('token', res.token);
+      } else {
+        this.errorLogin = true;
+      }
+    }, error => {
+      this.errorLogin = true;
+    })
+
   }
 }

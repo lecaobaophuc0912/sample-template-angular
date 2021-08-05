@@ -21,6 +21,9 @@
         </div>
       </div>
     </div>
+    <div class="flex justify-center items-center mt-12" *ngIf="errorLogin">
+      <span class="text-red-100 font-14">Wrong email or password. Please try again!</span>
+    </div>
     <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-3 flex flex-col justify-center items-center mt-12">
       <span class="font-weight-600 color-gray-400">Don't have account? <span class="cursor-pointer text-underline"
           routerLink="/sign-up">Sign
