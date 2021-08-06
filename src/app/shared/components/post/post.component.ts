@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Post } from '../../models/post';
-import { getRandomInt } from '../../utils/utils';
+import { Utils } from '../../utils/utils';
 
 @Component({
   selector: 'app-post',
@@ -22,10 +22,12 @@ export class PostComponent implements OnInit {
     return this.moonState ? this.fullMoonIcon : this.crescentMoon;
   }
 
-  getrRandomIndexUpper(): Array<number> {
+  getRandomIndexUpper(): Array<number> {
     let arrUpperIndex: Array<number> = [];
-    for (let i = 0; i < this.numberOfCharUpper; i++) {
-      arrUpperIndex.push(getRandomInt(0, this.postData.name.length - 1));
+    if (this.postData) {
+      for (let i = 0; i < this.numberOfCharUpper; i++) {
+        arrUpperIndex.push(Utils.getRandomInt(0, this.postData.name.length - 1));
+      }
     }
     return arrUpperIndex;
   }
@@ -33,7 +35,7 @@ export class PostComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.randomIndexUpper.push(...this.getrRandomIndexUpper());
+    this.randomIndexUpper.push(...this.getRandomIndexUpper());
   }
 
   onClickMoonIcon() {
