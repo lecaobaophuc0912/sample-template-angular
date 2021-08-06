@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Post } from '../../shared/models/post';
+import { PostService } from '../../shared/services/post.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  listPost: Array<Post> = [];
+  postClicked: Post;
+
+  constructor(
+    private postService: PostService
+  ) { }
 
   ngOnInit() {
+    this.getListPost();
   }
 
+  getListPost() {
+    this.postService.getListPost().subscribe((res) => {
+      if (res && res.data?.length) {
+        this.listPost.push(...res.data);
+      }
+    }, (error) => {
+      console.log(error);
+    })
+  }
+
+  onMoonIconClick(post: Post) {
+    this.postClicked = post;
+  }
 }
