@@ -22,8 +22,10 @@ export class HomeComponent implements OnInit {
 
   getListPost() {
     this.postService.getListPost().subscribe((res) => {
-      if (res && res.data?.length) {
+      if (res.data) {
         this.listPost.push(...res.data);
+      } else {
+        this.listPost = [];
       }
     }, (error) => {
       console.log(error);
