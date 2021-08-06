@@ -6,11 +6,24 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UserService } from './services/user.service';
+import { PostComponent } from './components/post/post.component';
+import { PostService } from './services/post.service';
+import { HoverHightlightDirective } from './directives/hover-hightlight.directive';
+import { RandomUppperCasePipe } from './pipes/random-uppper-case.pipe';
 
 const components = [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PostComponent,
 ];
+
+const directives = [
+    HoverHightlightDirective,
+];
+
+const pipes = [
+    RandomUppperCasePipe
+]
 
 @NgModule({
     imports: [
@@ -18,14 +31,21 @@ const components = [
         FormsModule,
         RouterModule,
         ReactiveFormsModule,
-        HttpClientModule
+        HttpClientModule,
     ],
     declarations: [
-        ...components
+        ...components,
+        ...directives,
+        ...pipes
     ],
-    exports: [...components],
+    exports: [
+        ...components,
+        ...directives,
+        ...pipes
+    ],
     providers: [
-        UserService
+        UserService,
+        PostService
     ]
 })
 export class SharedModule { }
