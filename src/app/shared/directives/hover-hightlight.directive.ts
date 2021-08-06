@@ -19,6 +19,6 @@ export class HoverHightlightDirective implements OnInit {
   constructor(private elementRef: ElementRef<HTMLElement>) { }
 
   ngOnInit() {
-    console.log(this.elementRef.nativeElement.style.background)
+
   }
 }
