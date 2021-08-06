@@ -1,10 +1,10 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[appHoverHightlight]'
 })
 
-export class HoverHightlightDirective {
+export class HoverHightlightDirective implements OnInit {
 
   @Input() hightLightColor: string = '#ffffff';
 
@@ -13,9 +13,12 @@ export class HoverHightlightDirective {
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.elementRef.nativeElement.style.background = null;
+    this.elementRef.nativeElement.style.background = '';
   }
 
   constructor(private elementRef: ElementRef<HTMLElement>) { }
 
+  ngOnInit() {
+
+  }
 }
