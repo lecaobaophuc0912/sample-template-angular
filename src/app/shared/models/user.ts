@@ -5,13 +5,9 @@ export class User {
     last_name: string;
     avatar: string
 }
-
-
 export class LoginReponse {
     token: string
 }
-
-
 export class UserDetailReponse {
     data: User;
     support: any;
