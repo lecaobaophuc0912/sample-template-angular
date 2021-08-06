@@ -21,7 +21,6 @@ function dispatchEvent(el, eventType) {
 describe('Directive: HoverHightlight', () => {
   let fixture: ComponentFixture<MockDirectiveComponent>;
   let divElement: DebugElement;
-  let component: MockDirectiveComponent;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
@@ -29,7 +28,6 @@ describe('Directive: HoverHightlight', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(MockDirectiveComponent);
-    component = fixture.componentInstance;
     divElement = fixture.debugElement.query(By.css('div'));
     fixture.detectChanges();
   }))
