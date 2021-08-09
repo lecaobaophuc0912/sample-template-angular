@@ -2,7 +2,7 @@ import { of } from "rxjs";
 import { LoginReponse, UserDetailReponse } from "../../models/user";
 
 export const mockDataLoginTokenData: LoginReponse = {
-    token: 'QpwL5tke4Pnpja21217X4'
+    token: 'QpwL5tke4Pnpja21217X4',
 };
 
 export const mockDataGetUserDetailData: UserDetailReponse = {
